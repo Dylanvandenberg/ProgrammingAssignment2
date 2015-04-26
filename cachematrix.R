@@ -7,6 +7,7 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
+        ##Defining the Set function which commits to cache using the <<- operator
         set <- function(y) {
                 x <<- y
                 m <<- NULL
@@ -14,6 +15,8 @@ makeCacheMatrix <- function(x = matrix()) {
         get <- function() x
         setinverse <- function(solve) m <<- solve
         getinverse <- function() m
+       
+        ## SAve the new functions into a list
         list(set = set, get = get,
              setinverse = setinverse,
              getinverse = getinverse)
